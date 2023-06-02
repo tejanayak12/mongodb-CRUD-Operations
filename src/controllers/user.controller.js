@@ -1,5 +1,22 @@
+const User = require('../models//user.model.js');
+
 function getAllUsers(req , res){
-    return res.send("Get All Users API")
+    User.find({})
+    .then(rows => res.json(rows))
+    .catch(error => res.json({status : 'fail' , message : "cannot get details...."}))
+};
+
+function getUserDatails (req , res) {
+    const id = req.params.userId
+    User
+    .findById(id)
+    .then(row => {
+        if(!row){
+            return res.json({status : "fail" , message : `couldn't find data on id : ${id}`})
+        }
+        res.json(row)
+    })
+    .catch(error => res.json({status : "fail"}))
 }
 
 function CreateUser(req , res){
@@ -18,6 +35,7 @@ module.exports = {
     getAllUsers,
     CreateUser,
     UpdateUser,
-    deleteUser
+    deleteUser,
+    getUserDatails
 };
 

@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const userrouter = require('./src/user.routes.js');
 const userProfilerouter = require('./src/userProfile.routes.js');
+const db = require('./src/db.js');
+db.dbInstilizer();
 
-
-app.use('/user' , userrouter)
+app.use('/users' , userrouter)
 app.use('/profile' , userProfilerouter)
 /*app.get('/user')
 app.post("/user")
