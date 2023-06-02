@@ -1,0 +1,16 @@
+{
+  "name": "mongodb-crud-operations",
+  "version": "1.0.0",
+  "description": "db operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "teja",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
